@@ -29,7 +29,7 @@ namespace Hasantayyar\Osbib\Create;
 class MISC {
 
 // <hr>
-    function hr($class = FALSE) {
+    public static function hr($class = FALSE) {
         $string = <<< END
 <hr class="$class" />
 END;
@@ -45,7 +45,7 @@ END;
     }
 
 // <BR>
-    function br() {
+    public static function br() {
         $string = <<< END
 <br />
 END;
@@ -53,7 +53,7 @@ END;
     }
 
 // <UL>
-    function ul($data, $class = FALSE) {
+    public static function ul($data, $class = FALSE) {
         $string = <<< END
 <ul class="$class">$data</ul>
 END;
@@ -61,7 +61,7 @@ END;
     }
 
 // <OL>
-    function ol($data, $class = FALSE, $type = "1") {
+    public static function ol($data, $class = FALSE, $type = "1") {
         $string = <<< END
 <ul class="$class" type="$type">$data</ul>
 END;
@@ -69,7 +69,7 @@ END;
     }
 
 // <LI>
-    function li($data, $class = FALSE) {
+    public static function li($data, $class = FALSE) {
         $string = <<< END
 <li class="$class">$data</li>
 END;
@@ -77,28 +77,28 @@ END;
     }
 
 // <STRONG>
-    function b($data, $class = FALSE) {
+    public static function b($data, $class = FALSE) {
         return <<< END
 <strong class="$class">$data</strong>
 END;
     }
 
 // <EM>
-    function i($data, $class = FALSE) {
+    public static function i($data, $class = FALSE) {
         return <<< END
 <em class="$class">$data</em>
 END;
     }
 
 // <U>
-    function u($data, $class = FALSE) {
+    public static function u($data, $class = FALSE) {
         return <<< END
 <u class="$class">$data</u>
 END;
     }
 
 // <SPAN>
-    function span($data, $class = FALSE) {
+    public static function span($data, $class = FALSE) {
         return <<< END
 <span class="$class">$data</span>
 END;
@@ -114,7 +114,7 @@ END;
     }
 
 // <img>
-    function img($src, $width, $height, $alt = "") {
+    public static function img($src, $width, $height, $alt = "") {
         $string = <<< END
 <img src="$src" border="0" width="$width" height="$height" alt="$alt" />
 END;
@@ -130,7 +130,7 @@ END;
     }
 
 // <A NAME="...">
-    function aName($name) {
+    public static function aName($name) {
         $string = <<< END
 <a name="$name"></a>
 END;
@@ -138,7 +138,7 @@ END;
     }
 
 // <script src="...">
-    function jsExternal($src) {
+    public static function jsExternal($src) {
         $string = <<< END
 <script src="$src" type="text/javascript"></script>
 END;

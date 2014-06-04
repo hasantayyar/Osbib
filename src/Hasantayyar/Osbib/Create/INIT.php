@@ -21,8 +21,6 @@ namespace Hasantayyar\Osbib\Create;
 /* * ***
  * 	Initialize a few default variables before we truly enter the system.
  *
- *
- * 	$Header: /cvsroot/bibliophile/OSBib/create/INIT.php,v 1.1 2005/06/20 22:26:51 sirfragalot Exp $
  * *** */
 
 class INIT {
@@ -38,15 +36,7 @@ class INIT {
 
 // Make sure we get HTTP VARS in whatever format they come in
     function getVars() {
-        if (!empty($_POST))
-            $vars = $_POST;
-        else if (!empty($_GET))
-            $vars = $_GET;
-        else
-            return FALSE;
-        if (!get_magic_quotes_gpc())
-            $vars = array_map(array("INIT", "magicSlashes"), $vars);
-        return $vars;
+        return !empty($_POST) ? $_POST : (!empty($_GET) ? $_GET : NULL);
     }
 
 // Add slashes to all incoming GET/POST data.  We now know what we're dealing with and can code accordingly.

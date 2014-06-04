@@ -26,8 +26,6 @@ use Hasantayyar\Osbib\UTF8;
  * 	Interface messages
  *
  * 	@author Mark Grimshaw
- *
- * 	$Header: /cvsroot/bibliophile/OSBib/create/MESSAGES.php,v 1.8 2005/11/14 06:38:15 sirfragalot Exp $
  */
 class MESSAGES {
 

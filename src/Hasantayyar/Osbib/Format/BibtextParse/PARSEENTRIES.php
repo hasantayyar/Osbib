@@ -107,7 +107,7 @@ END;
 
 class PARSEENTRIES
 {
-	function PARSEENTRIES()
+	function __construct()
 	{
 		$this->preamble = $this->strings = $this->entries = array();
 		$this->count = 0;

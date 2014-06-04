@@ -68,10 +68,10 @@ class ADMINSTYLE {
         $pString = MISC::h($this->messages->text("heading", "styles"), FALSE, 3);
         if ($message)
             $pString .= MISC::p($message);
-        $pString .= MISC::p(MISC::a("link", $this->messages->text("style", "addLabel"), "index.php?action=adminStyleAddInit"));
+        $pString .= MISC::p(MISC::a("link", $this->messages->text("style", "addLabel"), "create.php?action=adminStyleAddInit"));
         if (sizeof($this->styles)) {
-            $pString .= MISC::p(MISC::a("link", $this->messages->text("style", "copyLabel"), "index.php?action=adminStyleCopyInit"));
-            $pString .= MISC::p(MISC::a("link", $this->messages->text("style", "editLabel"), "index.php?action=adminStyleEditInit"));
+            $pString .= MISC::p(MISC::a("link", $this->messages->text("style", "copyLabel"), "create.php?action=adminStyleCopyInit"));
+            $pString .= MISC::p(MISC::a("link", $this->messages->text("style", "editLabel"), "create.php?action=adminStyleEditInit"));
         }
         return $pString;
     }
@@ -128,7 +128,6 @@ class ADMINSTYLE {
         $this->session->clearArray("footnote");
         include_once("../PARSEXML.php");
         $parseXML = new PARSEXML();
-        include_once("../STYLEMAP.php");
         $styleMap = new STYLEMAP();
         $resourceTypes = array_keys($styleMap->types);
         $this->session->setVar('editStyleFile', $this->vars['editStyleFile']);
@@ -352,8 +351,6 @@ class ADMINSTYLE {
 
 // display the citation templating form
     function displayCiteForm($type) {
-        include_once("TABLE.php");
-        include_once("../STYLEMAP.php");
         $this->map = new STYLEMAP();
         $pString = MISC::h($this->messages->text("cite", "citationFormat") . " (" .
                         $this->messages->text("cite", "citationFormatInText") . ")");
@@ -662,8 +659,6 @@ class ADMINSTYLE {
 
 // display the style form for both adding and editing
     function displayStyleForm($type) {
-        include_once("TABLE.php");
-        include_once("../STYLEMAP.php");
         $this->map = new STYLEMAP();
         $types = array_keys($this->map->types);
         if ($type == 'add')
@@ -858,7 +853,7 @@ class ADMINSTYLE {
             $pString .= TABLE::tableStart();
             $pString .= TABLE::trStart();
             $keyName = 'style_' . $key;
-            $preview = MISC::a("link linkCiteHidden", "preview", "javascript:openPopUpStylePreview('index.php?action=previewStyle', 
+            $preview = MISC::a("link linkCiteHidden", "preview", "javascript:openPopUpStylePreview('create.php?action=previewStyle', 
 				'100', '750', '$keyName')");
             $input = stripslashes(base64_decode($this->session->getVar($keyName)));
             $heading = MISC::b($this->messages->text("resourceType", $key)) . MISC::br() .

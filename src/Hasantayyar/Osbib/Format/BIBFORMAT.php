@@ -10,6 +10,8 @@ use Hasantayyar\Osbib\STYLEMAPBIBTEX;
 use Hasantayyar\Osbib\STYLEMAP;
 use Hasantayyar\Osbib\Format\PARSESTYLE;
 use Hasantayyar\Osbib\Format\EXPORTFILTER;
+use Hasantayyar\Osbib\UTF8;
+
 
 
 /* * ******************************
@@ -32,7 +34,6 @@ use Hasantayyar\Osbib\Format\EXPORTFILTER;
  * @author	Mark Grimshaw
  * @version	1
  */
-use Osbib\UTF8;
 
 class BIBFORMAT {
 

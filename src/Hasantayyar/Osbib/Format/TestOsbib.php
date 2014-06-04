@@ -33,7 +33,7 @@ use Hasantayyar\Osbib\Format\CITEFORMAT;
 /*
  * Start the ball rolling
  *
- * The first parameter to TESTOSBIB is the bibliographic style.  This can be any of the OSBIB supplied styles in ../styles/bibliography.
+ * The first parameter to TESTOSBIB is the bibliographic style.  This can be any of the OSBIB supplied styles in styles/bibliography.
  */
 
 
@@ -67,7 +67,7 @@ class TestOsbib {
 // The second argument is the name of the method within the bibstyle object that starts the formatting of a bibliographic item.
         $this->citeformat = new CITEFORMAT($this, "processBib", "../");
         $this->bibformat->output = $this->citeformat->output = 'html'; // output format (default)
-        list($info, $citation, $footnote, $styleCommon, $styleTypes) = $this->bibformat->loadStyle("../styles/bibliography/", $this->style);
+        list($info, $citation, $footnote, $styleCommon, $styleTypes) = $this->bibformat->loadStyle("styles/bibliography/", $this->style);
         $this->bibformat->getStyle($styleCommon, $styleTypes, $footnote);
         $this->citeformat->getStyle($citation, $footnote);
         unset($info, $citation, $footnote, $styleCommon, $styleTypes); // no longer required here so conserve memory
